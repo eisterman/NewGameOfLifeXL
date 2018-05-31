@@ -68,7 +68,7 @@ Per questo progetto ho ricorso a ben 3 differenti linguaggi di programmazione: C
 \begin{center}
 	\huge Il Game of Life è solo questo.
 \end{center}
-\normalsize Inoltre, la regola di Conway è detta \textbf{B3/S23}.\\
+\normalsize La regola di Conway è detta \textbf{B3/S23}.\\
 Ovvero che una cellula morta per tornare viva (Birth) deve avere 3 cellule vive vicino alla generazione precedente, mentre una cellula già viva per restarlo (Stay) deve avere o 2 o 3 cellule vive vicine alla generazione precedente.\\\\
 Questa sarà la regola che utilizzeremo nella nostra simulazione, ma lasciando spazio ad un possibile futuro cambiamento.
 \end{frame}
@@ -174,8 +174,9 @@ print("Hello World!")
 \begin{frame}{Python + C++ = ?}
 Ma con tutte queste differenze come faccio a collegare questi due mondi così diversi?\\\\
 \pause
-Python ha una API, una libreria chiamata C-API, che permette al Python di essere interagibile da un programma in C++.\\
-Però questa libreria per C++ è particolarmente ostica e difficile da usare.
+Python ha una API, una libreria chiamata C-API, che permette al Python di essere interagibile da un programma in C, e quindi anche C++.\\
+Però questa libreria è particolarmente ostica e difficile da usare.\\
+Esiste un altra libreria appositamente pensata per il C++ ovvero la \emph{Boost.Python}, non è però sufficientemente facile da usare per scrivere un progetto velocemente.
 \end{frame}
 
 \begin{frame}
@@ -239,7 +240,7 @@ Non utilizzerò le slide data la difficoltà di condensare \textit{"le cose gius
 	Ecosistema di moduli Python (\texttt{NumPy}, \texttt{SciPy}, \texttt{MatPlotLib}, \texttt{Pandas} e \texttt{SymPy}) per il calcolo numerico, scientifico, simbolico e la manipolazione e visualizzazione di dati.
 	\pause
 	\item \textbf{Scikit-learn}
-	Modulo di Machine Learning per Python. Implementata quasi interamente in Cython per il bisogno di velocità nel calcolo statistico.
+	Modulo di Machine Learning per Python. Le parti che avevano bisogno di elevata velocità sono state implementate in Cython e C++.
 	\pause
 	\item \textbf{Quora}
 	Piattaforma di domande e risposte con un certo livello di contenuto. Scritto interamente in Python, ha portato i bottleneck in Cython.
